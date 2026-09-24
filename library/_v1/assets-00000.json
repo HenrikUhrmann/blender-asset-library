@@ -1,7 +1,30 @@
 {
-  "asset_count": 1,
-  "file_count": 1,
+  "asset_count": 2,
+  "file_count": 2,
   "assets": [
+    {
+      "name": "Brushed Axial",
+      "id_type": "NODETREE",
+      "files": [
+        "Materials/assets.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "thumbnail": {
+        "url": "Materials/assets_thumbnails/Nodetree/brushed-axial.webp",
+        "hash": "SHA256:eda0c910577776b04efcdf16e2359ac0cf7b1b428ef75b25fb3bc747a5d2c09f"
+      },
+      "meta": {
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
     {
       "name": "Cube",
       "id_type": "OBJECT",
@@ -32,6 +55,12 @@
     }
   ],
   "files": [
+    {
+      "path": "Materials/assets.blend",
+      "size_in_bytes": 157585,
+      "hash": "SHA256:91b4ac60ec4173509995566d54a12bf9d3da476073b83df8ed8b26b7d85db8c0",
+      "blender_version": "5.2.44"
+    },
     {
       "path": "Models/Test Assets.blend",
       "size_in_bytes": 122996,

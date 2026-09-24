@@ -1,0 +1,15 @@
+schema_version = "1.0.0"
+
+id = "asset_library_publisher"
+version = "0.1.0"
+name = "Asset Library Publisher"
+tagline = "Assets in eine Git-basierte Remote Asset Library publishen und pushen"
+maintainer = "Henrik Uhrmann <henrikuhrmann@gmail.com>"
+type = "add-on"
+
+blender_version_min = "5.2.0"
+license = ["SPDX:GPL-3.0-or-later"]
+
+[permissions]
+files = "Schreibt Assets in das lokale Library-Repository und ruft git und Blender auf"
+network = "git push zum Remote-Repository"
