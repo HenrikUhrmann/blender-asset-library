@@ -6,7 +6,4 @@
 
 VERSION 1
 
-5a1c1d0e-8f3a-4c57-9b1e-2f6d7a3b0001:Materials:Materials
-7b2d2e1f-9a4b-4d68-8c2f-3a7e8b4c0002:Models:Models
-9c3e3f20-ab5c-4e79-9d30-4b8f9c5d0003:Node-Groups:Node-Groups
 ed031738-48f1-438a-90d5-9b33937180be:Shader Node Utils:Shader Node Utils

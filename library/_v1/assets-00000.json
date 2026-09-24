@@ -1,6 +1,6 @@
 {
-  "asset_count": 4,
-  "file_count": 2,
+  "asset_count": 7,
+  "file_count": 3,
   "assets": [
     {
       "name": "Brushed Axial",
@@ -16,6 +16,7 @@
         "hash": "SHA256:eda0c910577776b04efcdf16e2359ac0cf7b1b428ef75b25fb3bc747a5d2c09f"
       },
       "meta": {
+        "catalog_id": "ed031738-48f1-438a-90d5-9b33937180be",
         "properties": [
           {
             "name": "type",
@@ -39,6 +40,7 @@
         "hash": "SHA256:67f1bb4434af942a935a296b725646189c10742f6e941a41dc0d2908c785fbeb"
       },
       "meta": {
+        "catalog_id": "ed031738-48f1-438a-90d5-9b33937180be",
         "properties": [
           {
             "name": "type",
@@ -62,6 +64,7 @@
         "hash": "SHA256:6cf814f1a0ac67b76ecafcc7b14f7832a33cfe157abd5df1855dcc21eb3a2849"
       },
       "meta": {
+        "catalog_id": "ed031738-48f1-438a-90d5-9b33937180be",
         "properties": [
           {
             "name": "type",
@@ -98,13 +101,85 @@
           }
         ]
       }
+    },
+    {
+      "name": "Brushed Axial",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Shader Nodes Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "thumbnail": {
+        "url": "Node-Groups/Shader%20Nodes%20Utils_thumbnails/Nodetree/brushed-axial.webp",
+        "hash": "SHA256:eda0c910577776b04efcdf16e2359ac0cf7b1b428ef75b25fb3bc747a5d2c09f"
+      },
+      "meta": {
+        "catalog_id": "ed031738-48f1-438a-90d5-9b33937180be",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "Edge Wear",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Shader Nodes Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "thumbnail": {
+        "url": "Node-Groups/Shader%20Nodes%20Utils_thumbnails/Nodetree/edge-wear.webp",
+        "hash": "SHA256:67f1bb4434af942a935a296b725646189c10742f6e941a41dc0d2908c785fbeb"
+      },
+      "meta": {
+        "catalog_id": "ed031738-48f1-438a-90d5-9b33937180be",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mesh Absolute Normal",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Shader Nodes Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "thumbnail": {
+        "url": "Node-Groups/Shader%20Nodes%20Utils_thumbnails/Nodetree/mesh-absolute-normal.webp",
+        "hash": "SHA256:6cf814f1a0ac67b76ecafcc7b14f7832a33cfe157abd5df1855dcc21eb3a2849"
+      },
+      "meta": {
+        "catalog_id": "ed031738-48f1-438a-90d5-9b33937180be",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
     }
   ],
   "files": [
     {
       "path": "Materials/assets.blend",
-      "size_in_bytes": 239018,
-      "hash": "SHA256:53301d29cbc8de73681f045bdb2631fa3eea62685b723d70c4759a475a4958a7",
+      "size_in_bytes": 238988,
+      "hash": "SHA256:7c46616d8d12dea4306d99b4d5a795397c75c0d0114e35e68cb947f95c6624d0",
       "blender_version": "5.2.44"
     },
     {
@@ -113,6 +188,13 @@
       "hash": "SHA256:2c66d5ba2b595d75eb194822d860deee35e29d8d471ce424a4dc67e4fcb6f1ee",
       "blender_version": "5.2.44",
       "url": "Models/Test%20Assets.blend"
+    },
+    {
+      "path": "Node-Groups/Shader Nodes Utils.blend",
+      "size_in_bytes": 888296,
+      "hash": "SHA256:f6d15314679ef7614d8e78988f4d7e2dca15e3adcde77f388e6a674d09f3dc83",
+      "blender_version": "5.2.44",
+      "url": "Node-Groups/Shader%20Nodes%20Utils.blend"
     }
   ]
 }
