@@ -1,5 +1,5 @@
 {
-  "asset_count": 3,
+  "asset_count": 4,
   "file_count": 2,
   "assets": [
     {
@@ -49,6 +49,29 @@
       }
     },
     {
+      "name": "Mesh Absolute Normal",
+      "id_type": "NODETREE",
+      "files": [
+        "Materials/assets.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "thumbnail": {
+        "url": "Materials/assets_thumbnails/Nodetree/mesh-absolute-normal.webp",
+        "hash": "SHA256:6cf814f1a0ac67b76ecafcc7b14f7832a33cfe157abd5df1855dcc21eb3a2849"
+      },
+      "meta": {
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
       "name": "Cube",
       "id_type": "OBJECT",
       "files": [
@@ -80,8 +103,8 @@
   "files": [
     {
       "path": "Materials/assets.blend",
-      "size_in_bytes": 199901,
-      "hash": "SHA256:8c5ed54ed85534f278545acb22d9ff41e7e285c1b04d71364d68f86851e9c808",
+      "size_in_bytes": 239018,
+      "hash": "SHA256:53301d29cbc8de73681f045bdb2631fa3eea62685b723d70c4759a475a4958a7",
       "blender_version": "5.2.44"
     },
     {
