@@ -1,0 +1,562 @@
+{
+ "treatments": [
+  "straw",
+  "purple",
+  "blue"
+ ],
+ "metals": [
+  {
+   "key": "Al",
+   "label": "Aluminium",
+   "base_color": [
+    0.908,
+    0.9157,
+    0.9226
+   ],
+   "edge_tint": [
+    0.8761,
+    0.9026,
+    0.9338
+   ],
+   "ior_rgb": [
+    1.4545,
+    0.9921,
+    0.5879
+   ],
+   "extinction_rgb": [
+    7.5648,
+    6.5675,
+    5.2589
+   ],
+   "ior_550": 1.0152,
+   "reference": "A. D. Rakić. Algorithm for the determination of intrinsic optical constants of metal films: application to aluminum. <a href=\"https://doi.org/10.1364/AO.34.004755\"><i>Appl. Opt.</i> <b>34</b>, 4755-4767 (1995)</a>",
+   "film": null
+  },
+  {
+   "key": "Brass",
+   "label": "Brass (Cu70 Zn30)",
+   "base_color": [
+    0.8952,
+    0.7822,
+    0.4135
+   ],
+   "edge_tint": [
+    0.9543,
+    0.9782,
+    1.0
+   ],
+   "ior_rgb": [
+    0.4433,
+    0.5161,
+    1.248
+   ],
+   "extinction_rgb": [
+    3.8522,
+    2.6796,
+    1.8595
+   ],
+   "ior_550": 0.527,
+   "reference": "M. R. Querry. Optical constants, <a href=\"https://apps.dtic.mil/sti/citations/ADA158623\"><i>Contractor Report</i> CRDC-CR-85034 (1985)</a>",
+   "film": null
+  },
+  {
+   "key": "Cr",
+   "label": "Chromium",
+   "base_color": [
+    0.5503,
+    0.556,
+    0.5537
+   ],
+   "edge_tint": [
+    0.7425,
+    0.7481,
+    0.816
+   ],
+   "ior_rgb": [
+    3.2189,
+    3.1255,
+    2.2647
+   ],
+   "extinction_rgb": [
+    3.2911,
+    3.337,
+    3.1047
+   ],
+   "ior_550": 3.1812,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of transition metals: Ti, V, Cr, Mn, Fe, Co, Ni, and Pd. <a href=\"https://doi.org/10.1103/PhysRevB.9.5056\"><i>Phys. Rev. B</i> <b>9</b>, 5056-5070 (1974)</a>",
+   "film": null
+  },
+  {
+   "key": "Co",
+   "label": "Cobalt",
+   "base_color": [
+    0.6806,
+    0.6557,
+    0.6146
+   ],
+   "edge_tint": [
+    0.801,
+    0.8192,
+    0.8602
+   ],
+   "ior_rgb": [
+    2.2333,
+    2.0397,
+    1.703
+   ],
+   "extinction_rgb": [
+    4.1852,
+    3.8023,
+    3.22
+   ],
+   "ior_550": 2.0524,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of transition metals: Ti, V, Cr, Mn, Fe, Co, Ni, and Pd. <a href=\"https://doi.org/10.1103/PhysRevB.9.5056\"><i>Phys. Rev. B</i> <b>9</b>, 5056-5070 (1974)</a>",
+   "film": null
+  },
+  {
+   "key": "CommercialBronze",
+   "label": "Commercial Bronze (Cu90 Zn10)",
+   "base_color": [
+    0.9388,
+    0.718,
+    0.4567
+   ],
+   "edge_tint": [
+    0.9722,
+    0.9933,
+    1.0
+   ],
+   "ior_rgb": [
+    0.2584,
+    0.5743,
+    1.1436
+   ],
+   "extinction_rgb": [
+    3.9089,
+    2.3807,
+    1.9555
+   ],
+   "ior_550": 0.519,
+   "reference": "M. R. Querry. Optical constants, <a href=\"https://apps.dtic.mil/sti/citations/ADA158623\"><i>Contractor Report</i> CRDC-CR-85034 (1985)</a>",
+   "film": null
+  },
+  {
+   "key": "Cu",
+   "label": "Copper",
+   "base_color": [
+    0.9108,
+    0.6244,
+    0.5178
+   ],
+   "edge_tint": [
+    0.9795,
+    0.9472,
+    0.9452
+   ],
+   "ior_rgb": [
+    0.2608,
+    1.037,
+    1.303
+   ],
+   "extinction_rgb": [
+    3.1784,
+    2.6257,
+    2.3462
+   ],
+   "ior_550": 1.0066,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of the noble metals. <a href=\"https://doi.org/10.1103/PhysRevB.6.4370\"><i>Phys. Rev. B</i> <b>6</b>, 4370-4379 (1972)</a>",
+   "film": null
+  },
+  {
+   "key": "Au",
+   "label": "Gold",
+   "base_color": [
+    1.0,
+    0.7345,
+    0.3589
+   ],
+   "edge_tint": [
+    0.9769,
+    1.0,
+    0.9803
+   ],
+   "ior_rgb": [
+    1.3035,
+    0.5068,
+    1.4836
+   ],
+   "extinction_rgb": [
+    28.5172,
+    2.3165,
+    1.7573
+   ],
+   "ior_550": 0.4241,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of the noble metals. <a href=\"https://doi.org/10.1103/PhysRevB.6.4370\"><i>Phys. Rev. B</i> <b>6</b>, 4370-4379 (1972)</a>",
+   "film": null
+  },
+  {
+   "key": "Fe",
+   "label": "Iron (approx. carbon steel)",
+   "base_color": [
+    0.5284,
+    0.5135,
+    0.4934
+   ],
+   "edge_tint": [
+    0.7656,
+    0.767,
+    0.8029
+   ],
+   "ior_rgb": [
+    2.9152,
+    2.9236,
+    2.533
+   ],
+   "extinction_rgb": [
+    3.0656,
+    2.9396,
+    2.7421
+   ],
+   "ior_550": 2.9497,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of transition metals: Ti, V, Cr, Mn, Fe, Co, Ni, and Pd. <a href=\"https://doi.org/10.1103/PhysRevB.9.5056\"><i>Phys. Rev. B</i> <b>9</b>, 5056-5070 (1974)</a>",
+   "film": {
+    "material": "Fe3O4",
+    "note": "Magnetit (Fe3O4)",
+    "ior": 2.343,
+    "thickness_nm": {
+     "straw": 33.2,
+     "purple": 42.6,
+     "blue": 50.4
+    },
+    "reference": "M. R. Querry. Optical constants, <a href=\"https://apps.dtic.mil/sti/citations/ADA158623\"><i>Contractor Report</i> CRDC-CR-85034 (1985)</a>"
+   }
+  },
+  {
+   "key": "Mg",
+   "label": "Magnesium",
+   "base_color": [
+    0.956,
+    0.9533,
+    0.9502
+   ],
+   "edge_tint": [
+    0.9546,
+    0.9638,
+    0.9774
+   ],
+   "ior_rgb": [
+    0.4341,
+    0.2934,
+    0.2137
+   ],
+   "extinction_rgb": [
+    6.2328,
+    4.7672,
+    3.9828
+   ],
+   "ior_550": 0.315,
+   "reference": "1) H.-J. Hagemann, W. Gudat, and C. Kunz. Optical constants from the far infrared to the x-ray region: Mg, Al, Cu, Ag, Au, Bi, C, and Al<sub>2</sub>O<sub>3</sub>. <a href=\"https://doi.org/10.1364/JOSA.65.000742\"><i>J. Opt. Soc. Am.</i> <b>65</b>, 742-744 (1975)</a><br> 2) H.-J. Hagemann, W. Gudat, and C. Kunz. <a href=\"https://refractiveindex.info/download/data/1974/Hagemann 1974 - DESY report SR-74-7.pdf\">DESY report SR-74/7 (1974)</a>",
+   "film": null
+  },
+  {
+   "key": "Ni",
+   "label": "Nickel",
+   "base_color": [
+    0.6922,
+    0.6415,
+    0.5604
+   ],
+   "edge_tint": [
+    0.817,
+    0.8336,
+    0.872
+   ],
+   "ior_rgb": [
+    2.0156,
+    1.9056,
+    1.7235
+   ],
+   "extinction_rgb": [
+    4.1351,
+    3.5802,
+    2.875
+   ],
+   "ior_550": 1.9212,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of transition metals: Ti, V, Cr, Mn, Fe, Co, Ni, and Pd. <a href=\"https://doi.org/10.1103/PhysRevB.9.5056\"><i>Phys. Rev. B</i> <b>9</b>, 5056-5070 (1974)</a>",
+   "film": null
+  },
+  {
+   "key": "Pd",
+   "label": "Palladium",
+   "base_color": [
+    0.7296,
+    0.6975,
+    0.6507
+   ],
+   "edge_tint": [
+    0.8334,
+    0.8514,
+    0.8882
+   ],
+   "ior_rgb": [
+    1.7769,
+    1.6246,
+    1.3886
+   ],
+   "extinction_rgb": [
+    4.3094,
+    3.8206,
+    3.1934
+   ],
+   "ior_550": 1.6412,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of transition metals: Ti, V, Cr, Mn, Fe, Co, Ni, and Pd. <a href=\"https://doi.org/10.1103/PhysRevB.9.5056\"><i>Phys. Rev. B</i> <b>9</b>, 5056-5070 (1974)</a>",
+   "film": null
+  },
+  {
+   "key": "Pt",
+   "label": "Platinum",
+   "base_color": [
+    0.6743,
+    0.6384,
+    0.5818
+   ],
+   "edge_tint": [
+    0.7947,
+    0.8182,
+    0.8547
+   ],
+   "ior_rgb": [
+    2.3242,
+    2.079,
+    1.8242
+   ],
+   "extinction_rgb": [
+    4.1827,
+    3.6767,
+    3.0775
+   ],
+   "ior_550": 2.0908,
+   "reference": "A. D. Rakić, A. B. Djurišic, J. M. Elazar, M. L. Majewski. Optical properties of metallic films for vertical-cavity optoelectronic devices. <a href=\"https://doi.org/10.1364/AO.37.005271\"><i>Appl. Opt.</i> <b>37</b>, 5271-5283 (1998)</a><br> [<a href=\"https://github.com/polyanskiy/refractiveindex.info-scripts/blob/main/scripts/Rakic%201998%20-%20Pt%20(LD%20model).py\">Calculation script (Python)</a>]",
+   "film": null
+  },
+  {
+   "key": "RedBrass",
+   "label": "Red Brass (Cu85 Zn15)",
+   "base_color": [
+    0.8925,
+    0.7185,
+    0.4114
+   ],
+   "edge_tint": [
+    0.9687,
+    1.0,
+    1.0
+   ],
+   "ior_rgb": [
+    0.34,
+    0.5408,
+    1.2531
+   ],
+   "extinction_rgb": [
+    3.2672,
+    2.3045,
+    1.8544
+   ],
+   "ior_550": 0.5,
+   "reference": "M. R. Querry. Optical constants, <a href=\"https://apps.dtic.mil/sti/citations/ADA158623\"><i>Contractor Report</i> CRDC-CR-85034 (1985)</a>",
+   "film": null
+  },
+  {
+   "key": "Ag",
+   "label": "Silver",
+   "base_color": [
+    0.9889,
+    0.9841,
+    0.9775
+   ],
+   "edge_tint": [
+    0.9934,
+    0.9945,
+    0.9991
+   ],
+   "ior_rgb": [
+    0.2308,
+    0.2226,
+    0.2114
+   ],
+   "extinction_rgb": [
+    13.2328,
+    11.4828,
+    10.4828
+   ],
+   "ior_550": 0.0596,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of the noble metals. <a href=\"https://doi.org/10.1103/PhysRevB.6.4370\"><i>Phys. Rev. B</i> <b>6</b>, 4370-4379 (1972)</a>",
+   "film": null
+  },
+  {
+   "key": "StainlessAustenitic",
+   "label": "Stainless Steel, austenitic (316-type)",
+   "base_color": [
+    0.6666,
+    0.6395,
+    0.5969
+   ],
+   "edge_tint": [
+    0.7915,
+    0.8227,
+    0.8719
+   ],
+   "ior_rgb": [
+    2.3747,
+    2.027,
+    1.6409
+   ],
+   "extinction_rgb": [
+    4.1359,
+    3.6505,
+    3.0507
+   ],
+   "ior_550": 2.044,
+   "reference": "Björn Karlsson, Carl G. Ribbing. Optical constants and spectral selectivity of stainless steel and its oxides. <a href=\"https://doi.org/10.1063/1.331503\"><i>J. Appl. Phys.</i> <b>53</b>, 6340-6346 (1982)</a> (Data extracted from a figure)",
+   "film": {
+    "material": "Fe3O4",
+    "note": "Eisenoxid (Magnetit) als Näherung für die Chrom-Eisen-Oxidschicht",
+    "ior": 2.343,
+    "thickness_nm": {
+     "straw": 30.9,
+     "purple": 40.8,
+     "blue": 51.1
+    },
+    "reference": "M. R. Querry. Optical constants, <a href=\"https://apps.dtic.mil/sti/citations/ADA158623\"><i>Contractor Report</i> CRDC-CR-85034 (1985)</a>"
+   }
+  },
+  {
+   "key": "StainlessFerritic",
+   "label": "Stainless Steel, ferritic (430-type)",
+   "base_color": [
+    0.6031,
+    0.587,
+    0.5672
+   ],
+   "edge_tint": [
+    0.8167,
+    0.846,
+    0.9046
+   ],
+   "ior_rgb": [
+    2.1585,
+    1.8933,
+    1.4554
+   ],
+   "extinction_rgb": [
+    3.4315,
+    3.1566,
+    2.7243
+   ],
+   "ior_550": 1.9042,
+   "reference": "Björn Karlsson, Carl G. Ribbing. Optical constants and spectral selectivity of stainless steel and its oxides. <a href=\"https://doi.org/10.1063/1.331503\"><i>J. Appl. Phys.</i> <b>53</b>, 6340-6346 (1982)</a> (Data extracted from a figure)",
+   "film": {
+    "material": "Fe3O4",
+    "note": "Eisenoxid (Magnetit) als Näherung für die Chrom-Eisen-Oxidschicht",
+    "ior": 2.343,
+    "thickness_nm": {
+     "straw": 29.0,
+     "purple": 38.8,
+     "blue": 48.2
+    },
+    "reference": "M. R. Querry. Optical constants, <a href=\"https://apps.dtic.mil/sti/citations/ADA158623\"><i>Contractor Report</i> CRDC-CR-85034 (1985)</a>"
+   }
+  },
+  {
+   "key": "Ti",
+   "label": "Titanium",
+   "base_color": [
+    0.6152,
+    0.5799,
+    0.5417
+   ],
+   "edge_tint": [
+    0.7706,
+    0.7901,
+    0.8217
+   ],
+   "ior_rgb": [
+    2.7226,
+    2.512,
+    2.2308
+   ],
+   "extinction_rgb": [
+    3.8008,
+    3.4037,
+    3.0053
+   ],
+   "ior_550": 2.5418,
+   "reference": "P. B. Johnson and R. W. Christy. Optical constants of transition metals: Ti, V, Cr, Mn, Fe, Co, Ni, and Pd. <a href=\"https://doi.org/10.1103/PhysRevB.9.5056\"><i>Phys. Rev. B</i> <b>9</b>, 5056-5070 (1974)</a>",
+   "film": {
+    "material": "TiO2",
+    "note": "Titandioxid (TiO2), wie beim Anodisieren",
+    "ior": 2.436,
+    "thickness_nm": {
+     "straw": 30.7,
+     "purple": 39.6,
+     "blue": 48.5
+    },
+    "reference": "T. Siefke, S. Kroker, K. Pfeiffer, O. Puffky, K. Dietrich, D. Franta, I. Ohlídal, A. Szeghalmi, E.-B. Kley, A. Tünnermann. Materials pushing the application limits of wire grid polarizers further into the deep ultraviolet spectral range. <a href=\"https://doi.org/10.1002/adom.201600250\"><i>Adv. Opt. Mater.</i> <b>4</b>, 1780–1786 (2016)</a> (Numerical data kindly provided by Thomas Siefke)"
+   }
+  },
+  {
+   "key": "W",
+   "label": "Tungsten",
+   "base_color": [
+    0.5163,
+    0.4943,
+    0.4683
+   ],
+   "edge_tint": [
+    0.7169,
+    0.7326,
+    0.7414
+   ],
+   "ior_rgb": [
+    3.6743,
+    3.444,
+    3.3524
+   ],
+   "extinction_rgb": [
+    2.9216,
+    2.7368,
+    2.5052
+   ],
+   "ior_550": 3.456,
+   "reference": "A. D. Rakić, A. B. Djurišic, J. M. Elazar, M. L. Majewski. Optical properties of metallic films for vertical-cavity optoelectronic devices. <a href=\"https://doi.org/10.1364/AO.37.005271\"><i>Appl. Opt.</i> <b>37</b>, 5271-5283 (1998)</a><br> [<a href=\"https://github.com/polyanskiy/refractiveindex.info-scripts/blob/main/scripts/Rakic%201998%20-%20W%20(LD%20model).py\">Calculation script (Python)</a>]",
+   "film": null
+  },
+  {
+   "key": "Zn",
+   "label": "Zinc",
+   "base_color": [
+    0.8746,
+    0.869,
+    0.8545
+   ],
+   "edge_tint": [
+    0.8806,
+    0.9025,
+    0.9338
+   ],
+   "ior_rgb": [
+    1.1872,
+    0.9168,
+    0.6534
+   ],
+   "extinction_rgb": [
+    5.7512,
+    4.9326,
+    3.9024
+   ],
+   "ior_550": 0.9294,
+   "reference": "W. S. M. Werner, K. Glantschnig, C. Ambrosch-Draxl. Optical constants and inelastic electron-scattering data for 17 elemental metals. <a href=\"https://doi.org/10.1063/1.3243762\"><i>J. Phys Chem Ref. Data</i> <b>38</b>, 1013-1092 (2009)</a>",
+   "film": null
+  }
+ ]
+}

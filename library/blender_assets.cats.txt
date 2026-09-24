@@ -10,3 +10,5 @@ VERSION 1
 7b2d2e1f-9a4b-4d68-8c2f-3a7e8b4c0002:Models:Models
 9c3e3f20-ab5c-4e79-9d30-4b8f9c5d0003:Node-Groups:Node-Groups
 ed031738-48f1-438a-90d5-9b33937180be:Shader Node Utils:Shader Node Utils
+3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11:Node-Groups/Mapping:Node-Groups-Mapping
+8d1e4f70-2b93-4c6a-a5d8-1e7f3c9b2a44:Node-Groups/Metals:Node-Groups-Metals

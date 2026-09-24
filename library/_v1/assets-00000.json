@@ -1,6 +1,6 @@
 {
-  "asset_count": 4,
-  "file_count": 2,
+  "asset_count": 13,
+  "file_count": 3,
   "assets": [
     {
       "name": "Cube",
@@ -26,6 +26,259 @@
               2.0
             ],
             "itemtype": "IDP_FLOAT"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU Anti-Tile",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11",
+        "tags": [
+          "mapping",
+          "anti-tiling",
+          "random",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Bricht sichtbare Kachelwiederholung auf: Zell-Bombing mit Zufalls-Offset, Drehung und Spiegelung. Sampler-Closure (z. B. SU Image Sampler) als Eingang.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU Anti-Tile Sampler",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11",
+        "tags": [
+          "mapping",
+          "anti-tiling",
+          "sampler",
+          "closure",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Sampler-Modifikator gegen sichtbare Kachelwiederholung: nimmt einen Sampler und gibt einen kachelfreien Sampler zur\u00fcck. Z. B. SU Image Sampler -> SU Anti-Tile Sampler -> SU Triplanar.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU Image Sampler",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11",
+        "tags": [
+          "mapping",
+          "sampler",
+          "closure",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Sampler-Closure mit Image-Texture: Bild im Node 'Image' setzen (Tab). Pro Bild eine Einzelkopie der Gruppe. Eingang f\u00fcr SU Triplanar, SU Triplanar Normal und SU Anti-Tile.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU Metal Preset",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "8d1e4f70-2b93-4c6a-a5d8-1e7f3c9b2a44",
+        "tags": [
+          "metal",
+          "material",
+          "preset",
+          "thin film",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Metall-Voreinstellung f\u00fcr Blenders Metallic BSDF: Dropdown f\u00fcr Metall (u. a. Stahl, Edelstahl, Messing, Kupfer, Nickel, Gold) und Oxid-Behandlung. Ausg\u00e4nge Color, Edge Color, IOR, Extinction, Thin Film Thickness/IOR. Messwerte aus refractiveindex.info.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU Polar Mapping",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11",
+        "tags": [
+          "mapping",
+          "polar",
+          "radial",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Kartesisch zu polar: Winkel und Radius um ein Zentrum, mit Wiederholung, Offset und Spiegelung.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU Triplanar",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11",
+        "tags": [
+          "mapping",
+          "triplanar",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Triplanar-Projektion ohne UVs mit Sampler-Closure (z. B. SU Image Sampler). F\u00fcr Farbe, Roughness und andere Maps; Normal Maps mit SU Triplanar Normal.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU Triplanar Normal",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11",
+        "tags": [
+          "mapping",
+          "triplanar",
+          "normal",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Triplanar f\u00fcr Normal Maps: mischt die drei Projektionen mit Whiteout-\u00dcberblendung zu einem Weltraum-Normalvektor. Sampler liefert die Normal-Map-Farbe.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU UV Pivot Transform",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11",
+        "tags": [
+          "mapping",
+          "uv",
+          "transform",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Skalieren, Drehen, Verschieben und Spiegeln von Koordinaten um einen frei w\u00e4hlbaren Pivot.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "SU World Coords",
+      "id_type": "NODETREE",
+      "files": [
+        "Node-Groups/Mapping Utils.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "meta": {
+        "catalog_id": "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11",
+        "tags": [
+          "mapping",
+          "world",
+          "coordinates",
+          "utility"
+        ],
+        "author": "Henrik Uhrmann",
+        "description": "Weltkoordinaten in Metern f\u00fcr Texturen unabh\u00e4ngig von UVs, mit drei Modi und planaren Ausg\u00e4ngen.",
+        "properties": [
+          {
+            "name": "type",
+            "type": "IDP_INT",
+            "value": 0
           }
         ]
       }
@@ -110,6 +363,13 @@
       "hash": "SHA256:2c66d5ba2b595d75eb194822d860deee35e29d8d471ce424a4dc67e4fcb6f1ee",
       "blender_version": "5.2.44",
       "url": "Models/Test%20Assets.blend"
+    },
+    {
+      "path": "Node-Groups/Mapping Utils.blend",
+      "size_in_bytes": 175217,
+      "hash": "SHA256:69b9562a8b08b888ddf7908228c7c5f570ec53c21d8186ba1d96149696ab9a1b",
+      "blender_version": "5.2.44",
+      "url": "Node-Groups/Mapping%20Utils.blend"
     },
     {
       "path": "Node-Groups/Shader Nodes Utils.blend",

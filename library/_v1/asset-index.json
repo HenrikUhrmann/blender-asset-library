@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "asset_size_bytes": 1011331,
-  "asset_count": 4,
-  "file_count": 2,
+  "asset_size_bytes": 1186548,
+  "asset_count": 13,
+  "file_count": 3,
   "pages": [
     {
       "url": "_v1/assets-00000.json",
-      "hash": "SHA256:e5844a2e4f3969b427744f2db36006ffe14df20d697351bc2aecfa176e9edb95"
+      "hash": "SHA256:8f197b02bebef3d6cf62ead7ff62c2da27241fcc94c338dc1c60932c0e54d456"
     }
   ],
   "catalogs": [
@@ -30,6 +30,20 @@
         "9c3e3f20-ab5c-4e79-9d30-4b8f9c5d0003"
       ],
       "simple_name": "Node-Groups"
+    },
+    {
+      "path": "Node-Groups/Mapping",
+      "uuids": [
+        "3f6b1c2a-5d7e-4a90-8b14-6c2d9e0f7a11"
+      ],
+      "simple_name": "Node-Groups-Mapping"
+    },
+    {
+      "path": "Node-Groups/Metals",
+      "uuids": [
+        "8d1e4f70-2b93-4c6a-a5d8-1e7f3c9b2a44"
+      ],
+      "simple_name": "Node-Groups-Metals"
     },
     {
       "path": "Shader Node Utils",
