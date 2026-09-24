@@ -227,6 +227,7 @@ def save(path):
 
 def menu_switch(ng, data_type, menu_socket, items, default=None, fixed_menu=None):
     """Menu-Switch-Node (auch im Shader-Editor nutzbar). items: {Name: Wert}. Gibt den Output-Socket zurück.
+    Ein Menü-Socket darf nur an EINEN Menu-Switch angeschlossen werden.
     menu_socket: Socket, der das Menü liefert; fixed_menu: stattdessen feste Auswahl (nur für Tests)."""
     ms = ng.nodes.new("GeometryNodeMenuSwitch")
     ms.data_type = data_type

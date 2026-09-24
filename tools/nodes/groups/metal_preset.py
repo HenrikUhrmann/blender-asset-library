@@ -19,6 +19,8 @@ TREATMENTS = {  # Menüname -> Schlüssel in metals.json (None = ohne Film)
     "Oxide Tint: Blue": "blue",
 }
 DEFAULT_FILM_IOR = 1.33  # Blender-Standard, wird nur wirksam, wenn Dicke > 0
+# Skalierung, damit alle Werte in Color-Ramp-Farben (0..1) passen; nach dem Lesen wieder zurückgerechnet
+SCALE_N, SCALE_K, SCALE_T, SCALE_FILM = 8.0, 32.0, 64.0, 4.0
 
 
 def load():
@@ -26,10 +28,31 @@ def load():
         return json.load(f)
 
 
+def _ramp(ng, values, index_fac):
+    """Color Ramp (Constant) als Nachschlagetabelle: Eintrag i gilt für Index i. values: Liste von RGBA-Tupeln."""
+    n = len(values)
+    r = ng.nodes.new("ShaderNodeValToRGB")
+    ramp = r.color_ramp
+    ramp.interpolation = 'CONSTANT'
+    while len(ramp.elements) < n:
+        ramp.elements.new(1.0)
+    while len(ramp.elements) > n:
+        ramp.elements.remove(ramp.elements[len(ramp.elements) - 1])
+    for i, v in enumerate(values):
+        ramp.elements[i].position = i / n
+        ramp.elements[i].color = v
+    lib.link(ng, index_fac, r.inputs["Fac"])
+    return r
+
+
 def build(fixed=None):
-    """fixed = (Metallname, Behandlungsname) fixiert die Menüs (nur für Tests)."""
+    """fixed = (Metallname, Behandlungsname) fixiert die Menüs (nur für Tests).
+
+    Aufbau: je Dropdown genau ein Menu-Switch (Ausgabe = Index), weil ein Menü-Socket nur an EINEN Switch
+    angeschlossen werden darf. Die Werte kommen aus Color-Ramp-Tabellen (Constant), die der Index anspricht."""
     data = load()
     metals = sorted(data["metals"], key=lambda m: m["label"])
+    n_metals = len(metals)
 
     ng = lib.new_group(NAME)
     lib.socket(ng, "Color", 'COLOR', out=True, desc="Base Color (Reflexion bei senkrechtem Blick, F0), linear")
@@ -46,46 +69,46 @@ def build(fixed=None):
                     "Schicht auslöscht (Straw 450 nm, Purple 550 nm, Blue 650 nm). Nur bei Eisen, Edelstahl und Titan; "
                     "sonst 0 nm")
     gi, go = lib.group_io(ng)
-    metal_menu, treat_menu = gi.outputs["Metal"], gi.outputs["Treatment"]
-    fm = fixed[0] if fixed else None
-    ft = fixed[1] if fixed else None
 
-    def per_metal(dtype, fn):
-        return lib.menu_switch(ng, dtype, metal_menu, {m["label"]: fn(m) for m in metals}, fixed_menu=fm)
+    # Genau ein Menu-Switch je Dropdown, Ausgabe = Index
+    metal_idx = lib.menu_switch(ng, 'INT', gi.outputs["Metal"], {m["label"]: i for i, m in enumerate(metals)},
+                                fixed_menu=fixed[0] if fixed else None)
+    treat_idx = lib.menu_switch(ng, 'INT', gi.outputs["Treatment"], {t: i for i, t in enumerate(TREATMENTS)},
+                                fixed_menu=fixed[1] if fixed else None)
 
-    def rgba(v):
-        return (v[0], v[1], v[2], 1.0)
+    # Index -> Fac in der Mitte des jeweiligen Ramp-Eintrags
+    plus = lib.math_node(ng, 'ADD', metal_idx, 0.5)
+    fac = lib.math_node(ng, 'DIVIDE', plus.outputs[0], float(n_metals)).outputs[0]
 
-    lib.link(ng, per_metal('RGBA', lambda m: rgba(m["base_color"])), go.inputs["Color"])
-    lib.link(ng, per_metal('RGBA', lambda m: rgba(m["edge_tint"])), go.inputs["Edge Color"])
-    lib.link(ng, per_metal('VECTOR', lambda m: tuple(m["ior_rgb"])), go.inputs["IOR"])
-    lib.link(ng, per_metal('VECTOR', lambda m: tuple(m["extinction_rgb"])), go.inputs["Extinction"])
-    lib.link(ng, per_metal('FLOAT', lambda m: m["film"]["ior"] if m["film"] else DEFAULT_FILM_IOR),
+    def rgba(v, a=1.0):
+        return (v[0], v[1], v[2], a)
+
+    ramp_base = _ramp(ng, [rgba(m["base_color"], (m["film"]["ior"] if m["film"] else DEFAULT_FILM_IOR) / SCALE_FILM)
+                           for m in metals], fac)
+    ramp_edge = _ramp(ng, [rgba(m["edge_tint"]) for m in metals], fac)
+    ramp_n = _ramp(ng, [rgba([x / SCALE_N for x in m["ior_rgb"]]) for m in metals], fac)
+    ramp_k = _ramp(ng, [rgba([x / SCALE_K for x in m["extinction_rgb"]]) for m in metals], fac)
+
+    def thick(m):
+        t = m["film"]["thickness_nm"] if m["film"] else {}
+        return [(t.get(k) or 0.0) / SCALE_T for k in ("straw", "purple", "blue")]
+    ramp_t = _ramp(ng, [rgba(thick(m)) for m in metals], fac)
+
+    lib.link(ng, ramp_base.outputs["Color"], go.inputs["Color"])
+    lib.link(ng, ramp_edge.outputs["Color"], go.inputs["Edge Color"])
+    lib.link(ng, lib.vmath(ng, 'SCALE', ramp_n.outputs["Color"], scale=SCALE_N).outputs[0], go.inputs["IOR"])
+    lib.link(ng, lib.vmath(ng, 'SCALE', ramp_k.outputs["Color"], scale=SCALE_K).outputs[0], go.inputs["Extinction"])
+    lib.link(ng, lib.math_node(ng, 'MULTIPLY', ramp_base.outputs["Alpha"], SCALE_FILM).outputs[0],
              go.inputs["Thin Film IOR"])
 
-    thickness_items = {}
-    for tname, tkey in TREATMENTS.items():
-        if tkey is None:
-            thickness_items[tname] = 0.0
-        else:
-            thickness_items[tname] = per_metal(
-                'FLOAT', lambda m, tkey=tkey: (m["film"]["thickness_nm"][tkey] or 0.0) if m["film"] else 0.0)
-    ms = ng.nodes.new("GeometryNodeMenuSwitch")
-    ms.data_type = 'FLOAT'
-    for nm in [i.name for i in ms.enum_items]:
-        ms.enum_items.remove(ms.enum_items[nm])
-    for tname in TREATMENTS:
-        ms.enum_items.new(tname)
-    if ft is not None:
-        ms.inputs["Menu"].default_value = ft
-    else:
-        ng.links.new(treat_menu, ms.inputs["Menu"])
-    for tname, val in thickness_items.items():
-        if isinstance(val, float):
-            ms.inputs[tname].default_value = val
-        else:
-            ng.links.new(val, ms.inputs[tname])
-    lib.link(ng, ms.outputs["Output"], go.inputs["Thin Film Thickness"])
+    # Dicke: Behandlung 0 = keine Schicht, 1/2/3 = Straw/Purple/Blue aus den drei Kanälen von ramp_t
+    ts = lib.separate(ng, ramp_t.outputs["Color"])
+    total = None
+    for t_index, channel in ((1, "X"), (2, "Y"), (3, "Z")):
+        sel = lib.math_node(ng, 'COMPARE', treat_idx, float(t_index), 0.5)
+        part = lib.math_node(ng, 'MULTIPLY', sel.outputs[0], ts.outputs[channel])
+        total = part if total is None else lib.math_node(ng, 'ADD', total.outputs[0], part.outputs[0])
+    lib.link(ng, lib.math_node(ng, 'MULTIPLY', total.outputs[0], SCALE_T).outputs[0], go.inputs["Thin Film Thickness"])
 
     lib.autolayout(ng)
     lib.mark_asset(ng, "Metall-Voreinstellung für Blenders Metallic BSDF: Dropdown für Metall (u. a. Stahl, Edelstahl, "

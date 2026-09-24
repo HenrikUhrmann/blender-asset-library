@@ -63,6 +63,13 @@ Für alle anderen Metalle ist die Dicke 0 (für Kupfer und Messing liefert die D
 für Edelmetalle bildet sich keine Schicht). Für Edelstahl ist Magnetit (Fe3O4) eine Näherung der Chrom-Eisen-Oxidschicht.
 Die Oxidabsorption wird nicht berücksichtigt (nur n, nicht k des Films).
 
+## Aufbau der Dropdowns
+Ein Menü-Socket darf in Blender nur an **einen** Menu-Switch-Node angeschlossen werden (mit mehreren meldet Blender ungültige
+Links). Deshalb gibt es je Dropdown genau einen Menu-Switch, der nur einen **Index** ausgibt. Aus dem Index holen Color-Ramp-Nodes
+(Interpolation Constant) als Nachschlagetabellen alle Werte (Werte auf 0..1 skaliert und danach zurückgerechnet).
+Getestet: alle 19 Metalle mit allen Ausgängen und alle Behandlungen (31 Kombinationen), und Blender meldet für die Menü-Links
+keine ungültigen Verbindungen.
+
 ## Grenzen
-- Das Dropdown ist getestet, indem die Menüs im Test fest gesetzt wurden. Die Auswahl in der Blender-Oberfläche bitte selbst prüfen.
+- Das Dropdown ist getestet, indem die Menüs im Test fest gesetzt wurden (im Hintergrundmodus lässt sich die Auswahl nicht setzen). Die Auswahl in der Blender-Oberfläche bitte selbst prüfen.
 - Gealterte Oberflächen (Patina, Rost) sind mit diesem Modell nicht abgedeckt.

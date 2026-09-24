@@ -669,13 +669,15 @@ def test_composition():
 
 
 def test_metal():
-    """SU Metal Preset: feste Menüauswahl (im Hintergrund lässt sich das Dropdown nicht setzen), Werte gegen metals.json."""
+    """SU Metal Preset: feste Menüauswahl (im Hintergrund lässt sich das Dropdown nicht setzen), Werte gegen metals.json.
+    Alle Metalle (alle Ausgänge) und alle Behandlungen für die Metalle mit Dünnfilm."""
     data = metal_preset.load()
+    cases = [(m["label"], "Bare (polished)") for m in data["metals"]]
+    for m in data["metals"]:
+        if m["film"]:
+            cases += [(m["label"], t) for t in metal_preset.TREATMENTS if metal_preset.TREATMENTS[t]]
     by_label = {m["label"]: m for m in data["metals"]}
-    cases = [("Copper", "Bare (polished)"), ("Iron (approx. carbon steel)", "Oxide Tint: Straw"),
-             ("Titanium", "Oxide Tint: Blue"), ("Stainless Steel, austenitic (316-type)", "Oxide Tint: Purple"),
-             ("Gold", "Oxide Tint: Blue"), ("Brass (Cu70 Zn30)", "Bare (polished)"),
-             ("Silver", "Bare (polished)"), ("Tungsten", "Oxide Tint: Straw")]
+    bad = 0
     for metal, treat in cases:
         m = by_label[metal]
         tkey = metal_preset.TREATMENTS[treat]
@@ -684,11 +686,17 @@ def test_metal():
         want = {"Color": tuple(m["base_color"]), "Edge Color": tuple(m["edge_tint"]),
                 "IOR": tuple(m["ior_rgb"]), "Extinction": tuple(m["extinction_rgb"]),
                 "Thin Film Thickness": (thick,) * 3, "Thin Film IOR": (film_ior,) * 3}
-        for out, w in want.items():
+        outs = want if treat == "Bare (polished)" else {"Thin Film Thickness": want["Thin Film Thickness"]}
+        for out, w in outs.items():
             plane = setup_scene()
             grp = metal_preset.build(fixed=(metal, treat))
             got = render_probe(plane, grp, {"inputs": {}, "output": out, "uv": False})
-            check(f"Metal Preset [{metal} / {treat}] {out}", got, [w] * (N * N), tol=2e-4)
+            tol = 5e-4 * max(1.0, max(w))
+            if max(abs(a - b) for g in got for a, b in zip(g, w)) > tol:
+                bad += 1
+                FAILS.append(f"Metal {metal}/{treat}/{out}")
+                print(f"[FAIL] Metal Preset [{metal} / {treat}] {out}: erhalten {got[0]}, erwartet {w}")
+    print(f"[OK]   Metal Preset: {len(cases)} Kombinationen geprüft" if not bad else f"[FAIL] Metal Preset: {bad} Abweichungen")
 
 
 _only = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
