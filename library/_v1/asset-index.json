@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "asset_size_bytes": 122996,
+  "asset_count": 1,
+  "file_count": 1,
+  "pages": [
+    {
+      "url": "_v1/assets-00000.json",
+      "hash": "SHA256:ed37f7ecceaa9e15147e441a00678e7eb4c82eba18665222ea0a39858dbded82"
+    }
+  ],
+  "catalogs": [
+    {
+      "path": "Materials",
+      "uuids": [
+        "5a1c1d0e-8f3a-4c57-9b1e-2f6d7a3b0001"
+      ],
+      "simple_name": "Materials"
+    },
+    {
+      "path": "Models",
+      "uuids": [
+        "7b2d2e1f-9a4b-4d68-8c2f-3a7e8b4c0002"
+      ],
+      "simple_name": "Models"
+    },
+    {
+      "path": "Node-Groups",
+      "uuids": [
+        "9c3e3f20-ab5c-4e79-9d30-4b8f9c5d0003"
+      ],
+      "simple_name": "Node-Groups"
+    }
+  ]
+}

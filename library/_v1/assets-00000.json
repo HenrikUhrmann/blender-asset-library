@@ -1,0 +1,43 @@
+{
+  "asset_count": 1,
+  "file_count": 1,
+  "assets": [
+    {
+      "name": "Cube",
+      "id_type": "OBJECT",
+      "files": [
+        "Models/Test Assets.blend"
+      ],
+      "bl_versions": {
+        "min": "5.2"
+      },
+      "thumbnail": {
+        "url": "Models/Test%20Assets_thumbnails/Object/cube.webp",
+        "hash": "SHA256:97beddbbc5dbaecc293363a0f25d7517c01c9fb50bbff35cf1561b1316b6b05d"
+      },
+      "meta": {
+        "properties": [
+          {
+            "name": "dimensions",
+            "type": "IDP_ARRAY",
+            "value": [
+              2.0,
+              2.0,
+              2.0
+            ],
+            "itemtype": "IDP_FLOAT"
+          }
+        ]
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "Models/Test Assets.blend",
+      "size_in_bytes": 122996,
+      "hash": "SHA256:2c66d5ba2b595d75eb194822d860deee35e29d8d471ce424a4dc67e4fcb6f1ee",
+      "blender_version": "5.2.44",
+      "url": "Models/Test%20Assets.blend"
+    }
+  ]
+}
